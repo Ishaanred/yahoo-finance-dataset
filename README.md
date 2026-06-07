@@ -2,9 +2,13 @@
 
 A dataset of ~81,000 stock tickers scraped from Yahoo Finance, covering companies across 93 countries and all 11 GICS sectors. Useful for finance ML projects, sector analysis, company lookups, or building screeners.
 
-## File
+## Files
 
-`yahoo_finance_output.csv` — 81,390 rows, 13 columns
+| File | Description |
+|---|---|
+| `yahoo_finance_output.csv` | Scraped output — 81,390 rows, 13 columns |
+| `tickers.csv` | Input ticker list used to generate the dataset — 96,680 tickers with company names |
+| `scraper.py` | The scraper script — re-run against `tickers.csv` to get fresh data |
 
 ## Columns
 
@@ -37,6 +41,15 @@ A dataset of ~81,000 stock tickers scraped from Yahoo Finance, covering companie
 - **Scraped on June 16, 2025** — data reflects a point-in-time snapshot, market caps and financials will be outdated
 - Rows with `N/A` across most fields are tickers Yahoo Finance returned no data for (delisted, shell companies, etc.)
 - Financial figures are in the currency listed in the `Currency` column, not normalised to USD
+
+## Re-scraping fresh data
+
+```bash
+pip install yfinance pandas
+python scraper.py
+```
+
+The script resumes from where it left off — completed tickers are logged to `processed_tickers.log` so you won't re-fetch them on reruns. Expect it to take a while on the full 96k ticker list (2 second delay between requests, with auto-pause on timeouts).
 
 ## Quick start
 
