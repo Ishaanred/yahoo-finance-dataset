@@ -34,7 +34,7 @@ A dataset of ~81,000 stock tickers scraped from Yahoo Finance, covering companie
 
 ## Notes
 
-- Scraped from Yahoo Finance via `yfinance` — data reflects a snapshot in time and will be outdated for current prices/market caps
+- **Scraped on June 16, 2025** — data reflects a point-in-time snapshot, market caps and financials will be outdated
 - Rows with `N/A` across most fields are tickers Yahoo Finance returned no data for (delisted, shell companies, etc.)
 - Financial figures are in the currency listed in the `Currency` column, not normalised to USD
 
