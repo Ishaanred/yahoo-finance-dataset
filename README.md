@@ -6,7 +6,8 @@ A dataset of ~81,000 stock tickers scraped from Yahoo Finance, covering companie
 
 | File | Description |
 |---|---|
-| `yahoo_finance_output.csv` | Scraped output — 81,390 rows, 13 columns |
+| `yahoo_finance_output.csv` | Raw scraped output — 81,390 rows, 13 columns (includes N/A rows) |
+| `yahoo_finance_cleaned.csv` | Cleaned version — 50,201 rows, N/A rows dropped, numeric columns cast to float |
 | `tickers.csv` | Input ticker list used to generate the dataset — 96,680 tickers with company names |
 | `scraper.py` | The scraper script — re-run against `tickers.csv` to get fresh data |
 
